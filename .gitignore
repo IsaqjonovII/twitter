@@ -12,6 +12,10 @@ node_modules
 # Logs
 logs
 *.log
+pnpm-lock.yaml
+bun.lockb
+yarn.lock
+package-lock.json
 
 # Misc
 .DS_Store
