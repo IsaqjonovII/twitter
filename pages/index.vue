@@ -1,6 +1,6 @@
 <template>
-  <main class="dark:bg-primary">
-    <h1 class="dark:text-red-500">helooo</h1>
+  <main>
+
   </main>
 </template>
 
