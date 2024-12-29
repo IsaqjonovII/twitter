@@ -1,18 +1,37 @@
 @import "./fonts/index.css";
+@import "./icomoon/style.css";
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+    html.dark body {
+        @apply bg-dark;
+    }
+
+    html.light body {
+        @apply bg-white;
+    }
+
     body {
         font-family: 'chirp', sans-serif;
-        font-weight: normal;
         font-variant-numeric: lining-nums proportional-nums !important;
         font-feature-settings: "liga" off !important;
 
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+
+        @apply font-normal dark:text-white overflow-x-hidden
+    }
+
+    textarea {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
     }
 }
 
@@ -55,5 +74,11 @@
 
     .flex-between {
         @apply flex justify-between;
+    }
+}
+
+@layer components {
+    .separator {
+        @apply h-px bg-gray-200 dark:bg-primary-hover/10;
     }
 }

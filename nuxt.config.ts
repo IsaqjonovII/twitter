@@ -3,6 +3,19 @@ export default defineNuxtConfig({
 
     ssr: true,
 
+    app: {
+        pageTransition: {name: 'page', mode: 'out-in'},
+    },
+
+    routeRules: {
+        '/': {
+            redirect: {
+                to: '/home',
+                statusCode: 308
+            }
+        }
+    },
+
     modules: [
         [
             '@pinia/nuxt',

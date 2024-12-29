@@ -33,6 +33,7 @@ export default {
                     900: '#14171A', // Dark gray (dark mode text)
                 },
                 dark: '#10171E', // Darkest gray (dark mode background)
+                red: "#ff0000",
             },
         },
     },

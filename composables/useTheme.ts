@@ -1,19 +1,17 @@
+import {useDark} from "@vueuse/core";
 import type {Theme} from "~/types";
-import {useToggle, type UseToggleOptions} from "@vueuse/core";
 
 export const useTheme = () => {
     const theme = useCookie<Theme>("theme");
+    const isDark = useDark();
 
-    onMounted(() => {
-        if (!theme.value) {
-            theme.value = "dark";
-        }
-    });
-
-    const toggleTheme = useToggle(theme, ["dark", "light"] as UseToggleOptions<string, string>);
+    const toggleTheme = () => {
+        theme.value = theme.value === "dark" ? "light" : "dark";
+    };
 
     return {
         theme,
         toggleTheme,
+        isDark,
     };
 };
